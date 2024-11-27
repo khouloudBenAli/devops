@@ -12,6 +12,12 @@ pipeline {
 		 git url: 'https://github.com/khouloudBenAli/devops.git'
 	      }
         }
+        
+        stage('Build with Maven'){
+	     steps{
+		 sh 'mwn packge'
+	      }
+        }
     }
     
    
