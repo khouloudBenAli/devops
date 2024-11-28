@@ -14,7 +14,7 @@ WORKDIR /app
 
 # Replace "app.jar" with the name of your packaged JAR file
 
-COPY target/ExamThourayaS2-0.0.1-SNAPSHOT.jar /app/ExamThourayaS2-0.0.1-SNAPSHOT.jar
+COPY "target/ExamThourayaS2-0.0.1-SNAPSHOT.jar" "/app/ExamThourayaS2-0.0.1-SNAPSHOT.jar"
 
 
 
