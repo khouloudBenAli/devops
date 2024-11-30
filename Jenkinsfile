@@ -18,13 +18,13 @@ pipeline {
 		 sh 'mvn package'
 	      }
         }
-        stage('Build docker'){
+        stage('Deploy nexus'){
 	     steps{
-		 echo "DOCKERIZE"
-		 sh "pwd"
-		 sh "ls"
-		 sh 'docker build -t khouloudbenali/devops:1.0 .'
+	     
+	     withCredentials([file(credentialsId : 'nexusCred' , variable:'SETTINGS_FILE')]){
+		sh 'mvn deploy -s ${SETTINGS_FILE}'
 	      }
+	       }
         }
     }
     
