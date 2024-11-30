@@ -22,7 +22,7 @@ pipeline {
 	     steps{
 	     
 	     withCredentials([file(credentialsId : 'nexusCred' , variable:'SETTINGS_FILE')]){
-		sh 'mvn deploy -s ${SETTINGS_FILE}'
+		sh 'mvn deploy -s $SETTINGS_FILE'
 	      }
 	       }
         }
